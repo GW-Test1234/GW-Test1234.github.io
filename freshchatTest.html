@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Freshchat Demo</title>
+    <script src="https://snippets.freshchat.com/js/fc-pre-chat-form-v2.js"></script>
+    <script src='//fw-cdn.com/1628939/2527989.js' chat='true'></script>
+</head>
+<body>
+    <h1>Welcome to the Freshchat Demo</h1>
+<script>
+  window.prechatTemplate = {
+      "SubmitLabel": "Start Chat",
+      "fields": {
+          "0": {
+            "error": "Please Enter a valid Email",
+            "fieldId": "email",
+            "label": "Email",
+            "required": "yes",
+            "type": "email"
+          },
+          "1": {
+            "error": "Please Enter a valid Phone Number",
+            "fieldId": "phone",
+            "label": "Phone",
+            "required": "yes",
+            "type": "phone",
+          },
+
+      },
+      "heading": "GW Demo",
+      "mainbgColor": "#121618",
+      "maintxColor": "#db0aa4",
+      "textBanner": "To continue Please provide the details",
+    };
+    window.fcSettings = {
+      onInit: function() {
+        window.fcPreChatform.fcWidgetInit(window.prechatTemplate);
+    }
+    };
+    window.fcWidgetMessengerConfig = {
+      config: {
+          content: {
+            actions: {
+                tab_chat: "Chat"
+            },
+            headers: {
+                chat: "Chat With Us"
+            }
+          },
+          cssNames: {
+            expanded: "custom_fc_expanded",
+            widget: "custom_fc_frame"
+          }
+      }
+    };
+  </script>
+</body>
+</html>
