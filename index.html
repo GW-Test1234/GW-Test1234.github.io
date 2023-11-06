@@ -44,19 +44,39 @@
   window.prechatTemplate = {
       "SubmitLabel": "Start Chat",
       "fields": {
-           "0": {
+         "0": {
+            "fieldId": "userID",
+            "label": "User ID(If Handy)",
+            "required": "no",
+            "type": "userID"
+          },  
+           "1": {
+            "error": "Please Enter your Name",
+            "fieldId": "name",
+            "label": "Full Name",
+            "required": "yes",
+            "type": "name"
+          }, 
+           "2": {
             "error": "Please Enter a valid Email",
             "fieldId": "email",
             "label": "Email",
             "required": "yes",
             "type": "email"
           }, 
-          "1": {
+          "3": {
             "error": "Please Enter a valid Phone Number",
             "fieldId": "phone",
             "label": "Phone",
             "required": "yes",
             "type": "phone",
+          },
+        "4": {
+            "error": "Please Enter your Date of Birth",
+            "fieldId": "dob",
+            "label": "Date of Birth",
+            "required": "yes",
+            "type": "date",
           },
       },
       "heading": "PuntersPal",
