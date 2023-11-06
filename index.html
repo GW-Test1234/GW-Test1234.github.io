@@ -20,17 +20,20 @@
             }
 
             div.chat-fc-form-outer{
-                height: 530px !important;
+                height: 500px !important;
                 max-width: 320px !important;
             }
 
             .chat-fc-form-outer div.fc-form{
-                margin-top: -30px !important;
+                margin-top: 70px !important;
             }
 
             .chat-fc-form-outer p.fc-header{
                 height: 80px !important;
                 font-size: 31px !important;
+                background-image: url('https://github.com/GW-Test1234/GW-Test1234.github.io/blob/main/ppw.png');
+/*                 https://github.com/GW-Test1234/GW-Test1234.github.io/blob/main/ppw.png */
+
             }
     </style>
     
@@ -40,17 +43,16 @@
 <body>
     <h1>Welcome to the Freshchat Demo</h1>
 <script>
-// Make sure to add the fields in the freshchat portal to see
   window.prechatTemplate = {
       "SubmitLabel": "Start Chat",
       "fields": {
-           "0": {
+          "0": {
             "error": "Please Enter a valid Email",
             "fieldId": "email",
             "label": "Email",
             "required": "yes",
             "type": "email"
-          }, 
+          },
           "1": {
             "error": "Please Enter a valid Phone Number",
             "fieldId": "phone",
@@ -58,6 +60,7 @@
             "required": "yes",
             "type": "phone",
           },
+
       },
       "heading": "PuntersPal",
       "mainbgColor": "#d211a1", //"#121618",
