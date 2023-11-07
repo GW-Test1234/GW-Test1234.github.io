@@ -44,6 +44,16 @@
 <body>
     <h1>Welcome to the Freshchat Demo</h1>
 <script>
+    //Temp to clear
+function clearForm() {
+            var formFields = document.querySelectorAll('.fc-form-field input');
+            formFields.forEach(function (field) {
+                field.value = ''; // Clear the field value
+            });
+        }
+
+
+    
 // Make sure to add the fields in the freshchat portal to see
   window.prechatTemplate = {
       "SubmitLabel": "Start Chat",
