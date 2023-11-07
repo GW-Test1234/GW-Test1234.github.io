@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Simple Freshchat Demo</title>
-        <style>
+    <style>
         body {
             background: linear-gradient(90deg, rgba(43,155,199,1) 0%, rgba(14,1,1,1) 72%);
         }
@@ -10,107 +10,114 @@
         h1 {
             margin-top: 100px !important;
             text-align: center !important;
-            color:#eae1c7 !important;
+            color: #eae1c7 !important;
         }
 
-    .chat-fc-form-outer div.fc-form a.fc-button {
-    text-decoration: none !important;
-    font-weight: bold !important;
-    }
+        .chat-fc-form-outer div.fc-form a.fc-button {
+            text-decoration: none !important;
+            font-weight: bold !important;
+        }
 
+        div.chat-fc-form-outer {
+            height: 530px !important;
+            max-width: 320px !important;
+        }
 
-            div.chat-fc-form-outer{
-                height: 530px !important;
-                max-width: 320px !important;
-            }
+        .chat-fc-form-outer div.fc-form {
+            margin-top: -30px !important;
+        }
 
-            .chat-fc-form-outer div.fc-form{
-                margin-top: -30px !important;
-            }
+        .chat-fc-form-outer p.fc-header {
+            height: 80px !important;
+            font-size: 31px !important;
+            cursor: pointer;
+        }
 
-            .chat-fc-form-outer p.fc-header{
-                height: 80px !important;
-                font-size: 31px !important;
-                cursor: pointer;
-            }
-            .chat-fc-form-outer p.fc-header .fc-minimize{
-                font-size: medium;
-            }
+        .chat-fc-form-outer p.fc-header .fc-minimize {
+            font-size: medium;
+        }
     </style>
-    
+
     <script src="https://snippets.freshchat.com/js/fc-pre-chat-form-v2.js"></script>
     <script src='//au.fw-cdn.com/20722759/196337.js' chat='true'></script>
+
+    <!-- Add this script block to change the label -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var labelElement = document.querySelector(".fc-form-field[data-fc-field='work_number'] label");
+            if (labelElement) {
+                labelElement.textContent = "User ID";
+            }
+        });
+    </script>
 </head>
 <body>
     <h1>Welcome to the Freshchat Demo</h1>
-<script>
-// Make sure to add the fields in the freshchat portal to see
-  window.prechatTemplate = {
-      "SubmitLabel": "Start Chat",
-      "fields": {
-         "0": {
-            "fieldId": "lastName",
-            "label": "User ID (If Handy)",
-            "required": "no",
-            "type": "text",
-          },  
-           "1": {
-            "error": "Please Enter your Name",
-            "fieldId": "name",
-            "label": "Full Name",
-            "required": "yes",
-            "type": "text",
-          }, 
-           "2": {
-            "error": "Please Enter a valid Email",
-            "fieldId": "email",
-            "label": "Email",
-            "required": "yes",
-            "type": "email",
-          }, 
-          "3": {
-            "error": "Please Enter a valid Phone Number",
-            "fieldId": "phone",
-            "label": "Phone",
-            "required": "yes",
-            "type": "phone",
-          },
-        "4": {
-            "error": "Please Enter your Date of Birth",
-            "fieldId": "locale",
-            "label": "Date of Birth",
-            "required": "yes",
-            "type": "date",
-          },
-      },
-      "heading": "PuntersPal",
-      "mainbgColor": "#d211a1", //"#121618",
-      "maintxColor": "#ffffff", //"#2b9bc7",
-      "textBanner": "Welcome to PuntersPal chat! Please fill in the form below before starting the chat",
-    };
-    window.fcSettings = {
-        // token: "c7386678-54ff-4d97-8c2c-6efbbabee3c8",  //WebToken
-        //host: "",   //Unsure but webtoken is working fine
-      onInit: function() {
-        window.fcPreChatform.fcWidgetInit(window.prechatTemplate);
-    }
-    };
-    window.fcWidgetMessengerConfig = {
-      config: {
-          content: {
-            actions: {
-                tab_chat: "Chat"
+    <script>
+        window.prechatTemplate = {
+            "SubmitLabel": "Start Chat",
+            "fields": {
+                "0": {
+                    "fieldId": "work_number",
+                    "label": "User ID (If Handy)",
+                    "required": "no",
+                    "type": "text",
+                },
+                "1": {
+                    "error": "Please Enter your Name",
+                    "fieldId": "name",
+                    "label": "Full Name",
+                    "required": "yes",
+                    "type": "text",
+                },
+                "2": {
+                    "error": "Please Enter a valid Email",
+                    "fieldId": "email",
+                    "label": "Email",
+                    "required": "yes",
+                    "type": "email",
+                },
+                "3": {
+                    "error": "Please Enter a valid Phone Number",
+                    "fieldId": "phone",
+                    "label": "Phone",
+                    "required": "yes",
+                    "type": "phone",
+                },
+                "4": {
+                    "error": "Please Enter your Date of Birth",
+                    "fieldId": "locale",
+                    "label": "Date of Birth",
+                    "required": "yes",
+                    "type": "date",
+                },
             },
-            headers: {
-                chat: "Chat With Us"
+            "heading": "PuntersPal",
+            "mainbgColor": "#d211a1",
+            "maintxColor": "#ffffff",
+            "textBanner": "Welcome to PuntersPal chat! Please fill in the form below before starting the chat",
+        };
+        window.fcSettings = {
+            onInit: function () {
+                window.fcPreChatform.fcWidgetInit(window.prechatTemplate);
             }
-          },
-          cssNames: {
-            expanded: "custom_fc_expanded",
-            widget: "custom_fc_frame"
-          }
-      }
-    };
-  </script>
+        };
+        window.fcWidgetMessengerConfig = {
+            config: {
+                content: {
+                    actions: {
+                        tab_chat: "Chat"
+                    },
+                    headers: {
+                        chat: "Chat With Us"
+                    }
+                },
+                cssNames: {
+                    expanded: "custom_fc_expanded",
+                    widget: "custom_fc_frame"
+                }
+            }
+        };
+    </script>
 </body>
 </html>
